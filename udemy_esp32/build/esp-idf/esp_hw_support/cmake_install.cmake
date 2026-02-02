@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/app-template")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/udemy_esp32_app")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,11 +39,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
+  include("C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp_hw_support/port/esp32/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
+  include("C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp_hw_support/lowpower/cmake_install.cmake")
 endif()
 

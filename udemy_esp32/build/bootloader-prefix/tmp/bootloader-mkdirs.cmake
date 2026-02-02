@@ -10,18 +10,18 @@ if(NOT EXISTS "C:/esp/v5.5.2/esp-idf/components/bootloader/subproject")
   file(MAKE_DIRECTORY "C:/esp/v5.5.2/esp-idf/components/bootloader/subproject")
 endif()
 file(MAKE_DIRECTORY
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader"
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix"
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/tmp"
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp"
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src"
-  "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/tmp"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src"
+  "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp"
 )
 
 set(configSubDirs )
 foreach(subDir IN LISTS configSubDirs)
-    file(MAKE_DIRECTORY "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
+    file(MAKE_DIRECTORY "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp/${subDir}")
 endforeach()
 if(cfgdir)
-  file(MAKE_DIRECTORY "C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
+  file(MAKE_DIRECTORY "C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader-prefix/src/bootloader-stamp${cfgdir}") # cfgdir has leading slash
 endif()

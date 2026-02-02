@@ -18,8 +18,8 @@ end
 
 # Load bootloader symbols
 set confirm off
-    add-symbol-file C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/bootloader/bootloader.elf
+    add-symbol-file C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/bootloader/bootloader.elf
 set confirm on
 
 # Load application symbols
-file C:/Users/harri/Documents/ESP-IDF/udemy_esp32/build/udemy_esp32_app.elf
+file C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/udemy_esp32_app.elf

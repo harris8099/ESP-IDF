@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/harri/Documents/ESP-IDF/udemy_esp32/main
+# Install script for directory: C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/app-template")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/udemy_esp32_app")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
