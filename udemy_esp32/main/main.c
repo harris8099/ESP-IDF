@@ -5,6 +5,7 @@
 #include "nvs.h"
 #include "nvs_flash.h"
 
+#include "dht11.h"
 #include "wifi_app.h"
 
 void app_main(void)
@@ -20,4 +21,7 @@ void app_main(void)
 	
 	// Start wifi
 	wifi_app_start();
+	
+	// Start DHT11 sensor task
+	DHT11_task_start();
 }

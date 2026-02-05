@@ -28,5 +28,43 @@
 	</div>
 	<hr>
 		
+	<div id="DHT11Sensor">
+		<h2>DHT11 Sensor Readings</h2>
+		<label for="temperature_reading">Temperature: </label>
+		<div id="temperature_reading"></div>
+		<label for="humidity_reading">Humidity: </label>
+		<div id="humidity_reading"></div>
+	</div>
+	<hr>
+	
+	<div id="WiFiConnect">
+		<h2>WiFi Connect</h2>
+		<section>
+			<input type="text" id="connect_ssid" maxlength="32" placeholder="SSID" value="">
+			<input type="password" id="connect_pass" maxlength="64" placeholder="Password" value="">
+			<input type="checkbox" onclick="showPassword()">Show Password
+		</section>
+		<div class="buttons">
+			<input type="button" id="connect_wifi" value="Connect">
+		</div>
+		<div id="wifi_connect_credentials_errors"></div>
+		<h4 id="wifi_connect_status"></h4>
+	</div>
+	<div id="ConnectInfo">
+		<section>
+			<div id="connected_ap_label"></div>
+			<div id="connected_ap"></div>
+		</section>
+		<div id="ip_address_label"></div>
+		<div id="wifi_connect_ip"></div>
+		<div id="netmask_label"></div>
+		<div id="wifi_connect_netmask"></div>
+		<div id="gateway_label"></div>
+		<div id="wifi_connect_gw"></div>
+		<div class="buttons">
+			<input type="button" id="disconnect_wifi" value="Disconnect">
+		</div>
+	</div>
+	<hr>
 	</body>
 <html>
