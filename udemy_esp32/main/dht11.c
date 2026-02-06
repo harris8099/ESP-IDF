@@ -153,7 +153,7 @@ static void DHT11_task(void *pvParameter)
 	gpio_num_t gpio	=	DHT_GPIO;
 	DHT11_init(gpio);
 	
-	printf("Starting DHT task\n\n");
+	//printf("Starting DHT task\n\n");
 	
 	for(;;)
 	{
@@ -177,8 +177,8 @@ static void DHT11_task(void *pvParameter)
 				ESP_LOGI(TAG, "Unknown error");
 		}
 
-		printf("Hum %d\n", DHT11_reading_t.humidity);
-		printf("Tmp %d\n", DHT11_reading_t.temperature);
+		//printf("Hum %d\n", DHT11_reading_t.humidity);
+		//printf("Tmp %d\n", DHT11_reading_t.temperature);
 		
 		// Wait at least 2 seconds before reading again
 		// The interval of the whole process must be more than 2 seconds

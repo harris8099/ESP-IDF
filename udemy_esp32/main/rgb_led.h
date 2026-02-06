@@ -33,7 +33,7 @@ void rgb_led_wifi_app_started(void);
 /*
  *	Color to indicate HTTP server has started
  */
-void rgb_led_htttp_server_started(void);
+void rgb_led_http_server_started(void);
 
 
 /*

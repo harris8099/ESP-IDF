@@ -15,6 +15,10 @@ $(document).ready(function(){
     $("#connect_wifi").on("click", function(){
         checkCredentials();
     });
+    getConnectInfo();
+    $("#disconnect_wifi").on("click", function(){
+        disconnectWifi();
+    });
 });   
 
 /**
@@ -160,7 +164,7 @@ function stopWiFiConnectStatusInterval()
 function getWifiConnectStatus()
 {
     var xhr = new XMLHttpRequest();
-    var requestURL = "/wifiConnectStatus";
+    var requestURL = "/wifiConnectStatus.json";
     xhr.open('POST', requestURL, false);
     xhr.send('wifi_connect_status');
 
@@ -282,4 +286,23 @@ function getConnectInfo()
 
         document.getElementById('disconnect_wifi').style.display = 'block';
     })
+}
+
+
+/**
+ * Disconnects Wifi once the disconnect button is pressed and reloads the webpage.
+ */
+function disconnectWifi()
+{
+    $.ajax(
+        {
+            url: '/wifiDisconnect.json',
+            dataType: 'json',
+            method: 'DELETE',
+            cache: false,
+            data: {'timestamp': Date.now()}
+        }
+    );
+    // Update the web page
+    setTimeout("location.reload(true);", 2000);
 }
