@@ -1,3 +1,4 @@
+#include "esp_bit_defs.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/event_groups.h"
 #include "freertos/task.h"
@@ -29,6 +30,8 @@ static EventGroupHandle_t wifi_app_event_group;
 const int WIFI_APP_CONNECTING_USING_SAVED_CREDS_BIT			= BIT0;
 const int WIFI_APP_CONNECTING_FROM_HTTP_SERVER_BIT			= BIT1;
 const int WIFI_APP_USER_REQUESTED_STA_DISCONNECT_BIT		= BIT2;
+const int WIFI_APP_STA_CONNECTED_GOT_IP_BIT					= BIT3;
+
 
 // Queue handle used to manipulate the main queue of events
 static QueueHandle_t wifi_app_queue_handle;
@@ -262,6 +265,8 @@ static void wifi_app_task(void *pvParameters)
 				case WIFI_APP_MSG_STA_CONNECTED_GOT_IP:
 					ESP_LOGI(TAG, "WIFI_APP_MSG_STA_CONNECTED_GOT_IP");
 
+					xEventGroupSetBits(wifi_app_event_group, WIFI_APP_STA_CONNECTED_GOT_IP_BIT);
+					
 					rgb_led_wifi_connected();
 					http_server_monitor_send_message(HTTP_MSG_WIFI_CONNECT_SUCCESS);
 
@@ -285,13 +290,21 @@ static void wifi_app_task(void *pvParameters)
 				case WIFI_APP_MSG_USER_REQUESTED_STA_DISCONNECT:
 					ESP_LOGI(TAG, "WIFI_APP_MSG_USER_REQUESTED_STA_DISCONNECT");
 
-					xEventGroupSetBits(wifi_app_event_group, WIFI_APP_USER_REQUESTED_STA_DISCONNECT_BIT);
+					eventBits = xEventGroupGetBits(wifi_app_event_group);
+					
+					if(eventBits & WIFI_APP_STA_CONNECTED_GOT_IP_BIT)
+					{
+					
+						xEventGroupSetBits(wifi_app_event_group, WIFI_APP_USER_REQUESTED_STA_DISCONNECT_BIT);
 
-					g_retry_number = MAX_CONNECTION_RETRIES;
-					ESP_ERROR_CHECK(esp_wifi_disconnect());
-					app_nvs_clear_sta_creds();
-					rgb_led_http_server_started(); ///> todo: rename this status LED to a name more meaningful (to your liking)...
+						g_retry_number = MAX_CONNECTION_RETRIES;
+						ESP_ERROR_CHECK(esp_wifi_disconnect());
+						app_nvs_clear_sta_creds();
+						rgb_led_http_server_started(); ///> todo: rename this status LED to a name more meaningful (to your liking)...
 
+					}
+					
+					
 					break;
 
 				case WIFI_APP_MSG_STA_DISCONNECTED:
@@ -321,7 +334,10 @@ static void wifi_app_task(void *pvParameters)
 						ESP_LOGI(TAG, "WIFI_APP_MSG_STA_DISCONNECTED: ATTEMPT FAILED, CHECK WIFI ACCESS POINT AVAILABILITY");
 						// Adjust this case to your needs - maybe you want to keep trying to connect...
 					}
-
+					if(eventBits & WIFI_APP_STA_CONNECTED_GOT_IP_BIT)
+					{
+						xEventGroupClearBits(wifi_app_event_group, WIFI_APP_STA_CONNECTED_GOT_IP_BIT);
+					}
 					break;
 
 				default:

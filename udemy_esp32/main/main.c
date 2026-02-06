@@ -7,6 +7,7 @@
 
 #include "dht11.h"
 #include "wifi_app.h"
+#include "wifi_reset_button.h"
 
 void app_main(void)
 {
@@ -21,6 +22,9 @@ void app_main(void)
 	
 	// Start wifi
 	wifi_app_start();
+	
+	// Configure WIfi reset button
+	wifi_reset_button_config();
 	
 	// Start DHT11 sensor task
 	DHT11_task_start();
