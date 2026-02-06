@@ -562,3 +562,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/main/cmake_install.cmake")
 endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/cmake_install.cmake")
+endif()
+

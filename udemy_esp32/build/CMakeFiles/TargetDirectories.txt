@@ -852,3 +852,10 @@ C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/main/CMakeFi
 C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/main/CMakeFiles/install.dir
 C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/main/CMakeFiles/install/local.dir
 C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/main/CMakeFiles/install/strip.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/__idf_esp-aws-iot.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/edit_cache.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/rebuild_cache.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/list_install_components.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/install.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/install/local.dir
+C:/Users/harri/OneDrive/Documents/ESP-IDF/udemy_esp32/build/esp-idf/esp-aws-iot/CMakeFiles/install/strip.dir
